@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bizumpay Popup</title>
+
+    <link rel="stylesheet" href="./css/index.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" type="text/css" href="./css/loading-bar.min.css"/>
+    <script type="text/javascript" src="./js/loading-bar.min.js"></script>
+    <script src="https://kit.fontawesome.com/a950d22064.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <button class="btn btn-success" data-toggle="modal" data-target="#bizumpay-modal" id="open-modal">Click me</button>
+
+    <div class="modal fade" tabindex="-1" role="dialog" id="bizumpay-modal" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+          <div class="modal-content">
+              <!-- <div class="ml-4" style="float: left;">
+                <i class="fas fa-ellipsis-v"></i>
+              </div> -->
+              
+              <div class="title text-center">
+                <h3 class="fw-700">- Complete checkout -</h3>
+              </div>
+
+              <div class="card steps-card">
+                <div class="card-body text-center content-steps-card">
+                  <h5 class="fw-700">Sigue los siguientes pasos</h5>
+                  <h5 class="subtitle fw-700">para completar tu pago</h5>
+                  <div>
+                    <i class="fas fa-arrow-circle-down fa-2x"></i>
+                  </div>
+                  <div class="mt-2">
+                    <button type="button" class="btn btn-primary btn-lg btn-block btn-send-bizum">Envia por Bizum desde la App de tu banco</button>
+                  </div>
+                  <div class="mt-2">
+                      <h3 class="fw-700 cash">19,49 USD</h3>
+                  </div>
+                  <div>
+                      <p class="txt-tel">Al siguiente número de teléfono</p>
+                  </div>
+                  <div>
+                      <h2 class="fw-700">659 776 245</h2>
+                  </div>
+                </div>
+              </div>
+
+              <div class="mt-5">
+                <button type="button" class="btn btn-primary btn-lg btn-block text-center btn-code">
+                    <span class="adjunt-code fw-700">Adjunta el código</span> <br>
+                    <span class="fw-700">12345</span> 
+                </button>
+              </div>
+
+              <!-- <div> -->
+                <div class="loader">
+                    <svg class="circular">
+                      <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="5" stroke-miterlimit="10"></circle>
+                    </svg>
+                  </div>
+              <!-- </div> -->
+
+              <div class="mt-5 pt-3 text-center">
+                  <h6 class="payment-detect fw-700">DETECTANDO PAGO...</h6>
+              </div>
+
+          </div>
+        </div>
+    </div>
+
+    <!-- <button id="close-modal">Close me</button> -->
+
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+</body>
+</html>
