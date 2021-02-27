@@ -12,22 +12,42 @@
 
 * {
     box-sizing: border-box;
+    margin: 0;
+    padding: 0 !important;
 }
 
 body{
+    width: 100%;
+    height: 100%;
     background-color: #edeeed;
     font-family: 'Poppins', sans-serif;
     display: flex;
     align-items: center;
     justify-content: center;
     /* min-height: 100vh; */
-    margin: 0;
+    
 }
 
-#bizumpay-modal{    
-    background-image: url('../img/bizumpay-background.png');
+#bizumpay-modal{  
+    padding: 0;  
+    max-width: 100%;
+    background-image: url('../img/fondoSolo.png');
     width: 371px;
-    height: 660px;
+    /* min-height: 660px; */
+    min-height:900px !important;
+    margin :auto;
+    margin-top: 2%;
+    padding-left: 2% !important;
+    padding-right: 2% !important;
+    overflow: hidden;
+    background-repeat: no-repeat;
+    
+}
+.modal-backdrop.show{
+    background-color: green;
+}
+.modal .modal-dialog{
+    background-color: blue;
 }
 
 .modal-content
@@ -36,8 +56,25 @@ body{
     background-color: rgba(0,0,0,.0001) !important;
     /* background: transparent; */
     /* background-image: url('../img/bizumpay-background.png'); */
-    /* width: 371px;
-    height: 660px; */
+    background-color: red;
+    display: grid !important;
+    grid-gap: 5px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: repeat(auto-fill,auto)  ;
+    grid-template-areas: "titulo titulo"
+                         "cuadro cuadro"
+                         " caja  caja"
+                         "spinner spinner";
+}
+
+.title{
+    grid-area: titulo;
+    /* background-color: #B6463A; */
+}
+.cuadro{
+    /* background-color: blue !important; */
+    grid-area:cuadro;
+    width: max-content;
 }
 
 .modal-dialog{
@@ -47,21 +84,44 @@ body{
 }
 
 .title{
-    margin-top: 15%;
+    /* margin-top: 15%; */
     color: #05295e;
+}
+
+.caja-boton{
+    display: flex;
+    justify-content: center;
+    grid-area: caja;
+    margin-top: 5%;
+
+}
+.btn-code
+{
+    /* margin-left: 96px !important; */
+    width: auto !important;
+    background-color: #01b2ff !important;
+    border-color: #01b2ff !important;
+    border-radius: 15px !important;
+    /* height: 66px !important; */
+    color: white;
+    padding: 5% !important;
 }
 
 .title h1{
     font-weight: 700;
 }
 
-.steps-card
+.steps-card 
 {
-    margin-top: 2%;
+    /* margin-top: 2%;
     margin-left: 18px;
-    margin-right: 18px;
+    margin-right: 18px; */
+    margin-top: 2% !important;
     border-radius: 7px !important;
     background-color: #c4d6e4 !important;
+    width: 100% !important;
+    margin: 0;
+    padding: 5% !important;
 }
 
 .content-steps-card
@@ -71,6 +131,19 @@ body{
     padding-bottom: 1% !important;
 }
 
+
+.logo{
+    grid-area: spinner;
+    text-align: center;
+    margin-top: 5%;
+}
+.image-title{
+    padding: 10%;
+}
+.image-title img{
+    width: 60%;
+    max-width: 100%;
+}
 .subtitle
 {
     /* padding-top: -30px; */
@@ -86,14 +159,32 @@ body{
 {
     color: white;
 }
+.btn-send-bizum{
+    height: max-content;
+    max-width: 100%;
+}
+.btn-send-bizum p{
+    text-align: justify;
+    color: red;
+    max-width: 100% !important;
+}
 
-.btn-send-bizum
+.boton-a
 {    
-    font-size: 12px !important;
+    padding: 20px;
+    color: white;
+    font-size: 1em !important;
     border-radius: 18px !important;
     font-weight: 700 !important;
     background-color: #00db00 !important;
-    border-color: #00db00 !important;;
+    border-color: #00db00 !important;
+    min-height: 50px;
+    width: 100%;
+    margin-top: 4%;
+    margin-bottom: 4%;
+}
+ a{
+    text-decoration: none;
 }
 
 .cash
@@ -106,17 +197,7 @@ body{
     font-size: 110%;
 }
 
-.btn-code
-{
-    margin-left: 96px !important;
-    width: 50% !important;
-    background-color: #01b2ff !important;
-    border-color: #01b2ff !important;
-    border-radius: 15px !important;
-    height: 66px !important;
-    padding-top: 0px !important;
 
-}
 
 .adjunt-code
 {
@@ -189,4 +270,79 @@ body{
 .payment-detect
 {
     color: #05295e;
+}
+
+
+/* MenuPuntos */
+.menu {
+    width: 2.2rem;
+    /* height: 2.7rem; */
+    height: auto;
+    border-radius: 0 0.5rem 0.5rem 0;
+    position: absolute;
+    top: 11px;
+    right: 1%;
+    font-family: sans-serif;
+    font-size: 1rem;
+    color: white;
+    text-align: center;
+    transition: left 0.7s;
+    /* background-color: blue; */
+    /* background: rgba(132, 189, 0, 0.7); */
+    /* box-shadow: 0px 5px 5px rgba(0, 0, 0, 0.25); */
+    z-index: 15;
+
+}
+
+/* CUANDO SE CLICKEA  MenuPuntos*/
+.checkbox:checked ~ .menu {
+    /* background-color: red; */
+    /* left: 96%; */
+    right: 20px;
+    border-radius: 0 0.5rem 0.5rem 0;
+    font-size: 14px;
+    z-index: 25;
+   
+}
+.left-panel {
+    width: 100%;
+    height: 660px;
+    /*safari*/
+    background:  -webkit-linear-gradient(#54BBC7, #2EE3AD, #9191f2);
+    /*opera*/
+    background: -o-linear-gradient(#54BBC7, #2EE3AD, #9191f2);
+    /*estandar*/
+    background: linear-gradient(#54BBC7, #2EE3AD, #9191f2);
+    position: fixed;
+    top: 0;
+    left: -120%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: left 0.4s;
+    z-index: 20;
+}
+.checkbox:checked ~ .left-panel {
+    left: 0;
+}
+.checkbox {
+    display: none;   
+}
+ul a {
+    color: #F7F7F7;
+    text-decoration: none;
+}
+
+li {
+    list-style: none;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0 0.5rem;
+    margin: 1rem 0;
+}
+
+li:hover {
+    color: white;
+    border: solid white;
+    border-width: 0 0.1rem;
 }
